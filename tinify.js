@@ -1,7 +1,7 @@
 const fs = require('fs');
 const tinify = require("tinify");
 
-fs.readFile('../../../tinifyAPIKey.json', 'utf8' , (err, data) => {
+fs.readFile('../../../../tinifyAPIKey.json', 'utf8' , (err, data) => {
     if (err) {
         console.error(err)
         return
