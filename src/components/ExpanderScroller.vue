@@ -2,15 +2,13 @@
   <div class="scroll-container" :class="{leftmost: leftMost, rightmost: rightMost}" ref="container">
     <div class="scroller" ref="scroller" @scroll="scrollerScrolled">
       <div class="items" ref="items">
-        <a :href="item[3]" target="_blank" class="item" v-for="item in scrollerItems" :key="item" @click="$emit('track', item[3])" :data-name="`Scroller - ${item[0]}`">
+        <a :href="item.url" target="_blank" class="item" :class="`item-${index}`" v-for="item, index in items" :key="item" :data-name="item.title">
           <div class="image">
-            <img :src="getImageUrl(item[2])">
+            <img :src="getImage(item.image)">
           </div>
           <div class="info">
-            <h3 class="title">{{item[0]}}</h3>
-            <p>
-              {{item[1]}}
-            </p>
+            <h3 class="title">{{item.title}}</h3>
+            <p v-html="item.text"></p>
           </div>
         </a>
       </div>
@@ -23,17 +21,15 @@
 <script>
   export default {
     name: 'ExpanderScroller',
-    emits: ['track'],
     data() {
       return {
-        scrollerItems: [
-          [
-            'Title',
-            'The text',
-            'image.jpg',
-            'https://showheroes.com',
-            'title'
-          ],
+        items: [
+          {
+            title: '',
+            text: '',
+            image: '',
+            url: '',
+          },
         ],
         leftMost: true,
         rightMost: false,
@@ -42,7 +38,7 @@
       }
     },
     methods: {
-      getImageUrl(image) {
+      getImage(image) {
         return require(`@/assets/${image}`)
       },
       scrollToPrev: function() {
