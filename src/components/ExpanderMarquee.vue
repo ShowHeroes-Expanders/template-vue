@@ -107,18 +107,6 @@
     .text {
       text-align: center;
     }
-    .title {
-      margin-bottom: .25rem;
-      font-family: $font-headings;
-      font-size: 1.5rem;
-      font-weight: 900;
-    }
-    p {
-      font-family: $font-headings;
-      font-size: 1rem;
-      font-weight: 600;
-      color: $color-1;
-    }
     .image {
       overflow: hidden;
       img {
