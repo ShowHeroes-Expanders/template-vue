@@ -1,11 +1,17 @@
 <template>
   <div class="wrapper">
     <div class="slider" ref="slider">
-      <div class="item" v-for="item in 5" :key="item">
-        <a href="" target="_blank" class="inner" @click="$emit('track', 'test')" :data-name="`Slider - ${item}`">
-          <img :src="getImage(item)">
+      <article class="item" :class="`item-${index}`" v-for="item, index in items" :key="item">
+        <a :href="item.url" target="_blank" class="inner" :data-name="item.title">
+          <div class="image">
+            <img :src="getImage(item.image)">
+          </div>
+          <div class="info">
+            <h1 class="title">{{ item.title }}</h1>
+            <p v-html="item.text"></p>
+          </div>
         </a>
-      </div>
+      </article>
     </div>
   </div>
 </template>
@@ -15,7 +21,18 @@
 
   export default {
     name: 'ExpanderSlider',
-    emits: ['track'],
+    data() {
+      return {
+        items: [
+          {
+            title: '',
+            text: '',
+            image: '',
+            url: '',
+          },
+        ]
+      }
+    },
     mounted() {
       tns({
         container: this.$refs.slider,
@@ -32,14 +49,14 @@
     },
     methods: {
       getImage(image) {
-        return require(`@/assets/${image}`)
+        return require(`@/assets/slider/${image}`)
       }
     }
   }
 </script>
 
 <style lang="scss">
-  @import "node_modules/tiny-slider/src/tiny-slider";
+  @use "/node_modules/tiny-slider/src/tiny-slider";
 </style>
 
 <style scoped lang="scss">
@@ -48,27 +65,22 @@
 
   .wrapper {
     position: relative;
+
     .inner {
       display: block;
-      img {
-        display: block;
-        width: 100%;
-      }
     }
     
     :deep(.tns-controls) {
       outline: 0;
       button {
         position: absolute;
-        height: 1.75rem;
+        top: 0;
         width: 1.75rem;
+        height: 100%;
         background: none;
         border: 0;
         text-indent: -2000%;
         overflow: hidden;
-        border-radius: 50%;
-        background-color: $color-2 !important;
-        transform: translate(0, -50%);
         &:first-child {
           left: .5rem;
           // background: url('../assets/arr-l.svg') no-repeat center center / contain;
@@ -79,7 +91,7 @@
         &:last-child {
           right: .5rem;
           // background: url('../assets/arr-r.svg') no-repeat center center / contain;
-          @include m {
+          @include d {
             right: 1rem;
           }
         }
