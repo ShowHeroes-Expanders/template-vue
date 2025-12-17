@@ -9,7 +9,7 @@
 </template>
 
 <script> 
-  // Expected sections with [data-sectoion=n] attributes
+  // Expected sections with [data-sectoion=n] attributes. [n] representing the order number of the section, starting from 1 (e.g. 1, 2, 3)
   export default {
     name: 'ExpanderStickyNav',
     data() {
