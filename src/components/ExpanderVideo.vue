@@ -1,7 +1,7 @@
 <template>
   <div class="expander-video">
     <div class="video-frame" :class="{mobile: mobile, playing: playing}">
-      <video preload="auto" playsinline ref="video" @play="videoPlays()" @pause="videoPauses()" @click="togglePlay()" :poster="poster ? getVideoPoster() : null" :data-track="track ? true : false" :data-name="name ? name : null">
+      <video preload="auto" playsinline ref="video" @play="videoPlays()" @pause="videoPauses()" @click="togglePlay()" :poster="poster ? getVideoPoster() : null" :data-track="track ? true : false" :data-name="name ? name : null" @volumechange="volumeChanged">
         <source :src="getVideoSrc()" type="video/mp4">
       </video>
       <a :href="url" target="_blank" class="link" v-if="url" :data-name="name ? name : null"></a>
@@ -105,6 +105,9 @@
         } else {
           this.muted = true
         }
+      },
+      volumeChanged(e) {
+        this.muted = e.target.muted
       }
     }
   }
