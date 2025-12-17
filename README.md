@@ -19,7 +19,11 @@ cd [new-repo]
 ```
 npm install
 ```
-6. Run the local server
+6. Run the local development server
+```
+npm run dev
+```
+Or use the legacy command:
 ```
 npm run serve
 ```
@@ -27,10 +31,28 @@ npm run serve
 ```
 npm run build
 ```
-8. Compress the content of the `dist` folder and upload to the Create platform.
-9. Commit and push all the changes and assets
+8. Preview the production build locally (optional)
+```
+npm run preview
+```
+9. Compress the content of the `dist` folder and upload to the Create platform.
+10. Commit and push all the changes and assets
 ```
 git add -A
 git commit -m "Some comment"
 git push
 ```
+
+## Technology Stack
+
+This template uses:
+- **Vue 3** (v3.5.25) - Latest stable version
+- **Vite** (v6.0.11) - Modern, fast build tool
+- **Sass** - CSS preprocessor
+- **ESLint 9** - Code linting with flat config
+
+## Development Notes
+
+- The dev server runs on `http://localhost:5173` by default
+- Hot Module Replacement (HMR) is enabled for instant updates
+- Build outputs are optimized and production-ready

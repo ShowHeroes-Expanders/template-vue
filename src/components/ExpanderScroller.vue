@@ -39,7 +39,7 @@
     },
     methods: {
       getImage(image) {
-        return require(`@/assets/${image}`)
+        return new URL(`../assets/${image}`, import.meta.url).href
       },
       scrollToPrev: function() {
         let w = this.$refs.items.children[0].offsetWidth

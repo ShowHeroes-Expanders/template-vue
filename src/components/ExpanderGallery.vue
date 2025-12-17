@@ -70,14 +70,14 @@
     },
     methods: {
       getImage(image) {
-        return require(`@/assets/carousel/${image}.webp`)
+        return new URL(`../assets/carousel/${image}.webp`, import.meta.url).href
       }
     }
   }
 </script>
 
 <style lang="scss">
-  @use "node_modules/tiny-slider/src/tiny-slider";
+  @use "tiny-slider/src/tiny-slider";
   @use '@/scss/variables.scss' as *;
   @use '@/scss/mixins.scss' as *;
 

@@ -62,10 +62,10 @@
     },
     methods: {
       getVideoSrc() {
-        return require(`@/assets/video/${this.filename}`)
+        return `/video/${this.filename}`
       },
       getVideoPoster() {
-        return require(`@/assets/video/${this.poster}`)
+        return `/video/${this.poster}`
       },
       videoPlays() {
         this.playing = true

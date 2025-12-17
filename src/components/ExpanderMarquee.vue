@@ -51,7 +51,7 @@
     },
     methods: {
       getImageUrl(image) {
-        return require(`@/assets/marquee/${image}`)
+        return new URL(`../assets/marquee/${image}`, import.meta.url).href
       },
     },
   }

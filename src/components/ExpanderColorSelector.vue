@@ -89,10 +89,10 @@
         return this.activeIndex === index
       },
       getColorThumb(image) {
-        return require(`@/assets/colors/${image}`)
+        return new URL(`../assets/colors/${image}`, import.meta.url).href
       },
       getCurrentImage() {
-        return require(`@/assets/models/${this.items[this.activeIndex][1]}`)
+        return new URL(`../assets/models/${this.items[this.activeIndex][1]}`, import.meta.url).href
       },
       setLabel(index) {
         this.currentLabel = this.items[index][0]

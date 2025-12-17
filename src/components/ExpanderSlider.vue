@@ -49,14 +49,14 @@
     },
     methods: {
       getImage(image) {
-        return require(`@/assets/slider/${image}`)
+        return new URL(`../assets/slider/${image}`, import.meta.url).href
       }
     }
   }
 </script>
 
 <style lang="scss">
-  @use "/node_modules/tiny-slider/src/tiny-slider";
+  @use "tiny-slider/src/tiny-slider";
 </style>
 
 <style scoped lang="scss">

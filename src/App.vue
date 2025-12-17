@@ -23,7 +23,7 @@
   <footer class="section-footer sticky">
     <div class="container">
       <a href="" target="_blank" class="logo" data-name="Logo">
-        <img src="@/assets/logo.png">
+        <img src="@/assets/logo.svg">
       </a> 
       <a href="" target="_blank" class="cta" data-name="Read more">Read more</a>
     </div>
@@ -65,7 +65,7 @@
 </script>
 
 <style lang="scss">
-  @use "/node_modules/minireset.css/minireset";
+  @use "minireset.css/minireset";
   @use '@/scss/fonts.scss';
   @use '@/scss/variables.scss' as *;
   @use '@/scss/mixins.scss' as *;
