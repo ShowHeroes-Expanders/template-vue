@@ -2,7 +2,7 @@
   <div class="container">
     <div class="scroller">
       <div class="items items-main">
-        <a :href="item.url" target="_blank" class="item" v-for="item in items" :key="item" :data-name="item.title">
+        <a :href="$shClickUrl(item.url)" target="_blank" class="item" v-for="item in items" :key="item" :data-name="item.title">
           <div class="image">
             <img :src="getImageUrl(item.image)">
           </div>
@@ -11,7 +11,7 @@
           </div>
         </a>
         <div class="items items-copy">
-          <a :href="item.url" target="_blank" class="item" v-for="item in items" :key="item" :data-name="item.title">
+          <a :href="$shClickUrl(item.url)" target="_blank" class="item" v-for="item in items" :key="item" :data-name="item.title">
             <div class="image">
               <img :src="getImageUrl(item.image)">
             </div>

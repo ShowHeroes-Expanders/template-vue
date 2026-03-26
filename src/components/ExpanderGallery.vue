@@ -11,7 +11,7 @@
             <p class="description">
               {{item[1]}}
             </p>
-            <a href="https://www.visitsonderjylland.dk/turist/overnatning/camping?utm_source=web-2022&utm_medium=havas&utm_campaign=camping-22" target="_blank" class="link" :data-track="item[0]" :data-res-action="`1780-${item[3]}`">
+            <a :href="$shClickUrl('main')" target="_blank" class="link" :data-track="item[0]">
               Læs mere
             </a>
           </div>

@@ -2,7 +2,7 @@
   <div class="wrapper">
     <div class="slider" ref="slider">
       <article class="item" :class="`item-${index}`" v-for="item, index in items" :key="item">
-        <a :href="item.url" target="_blank" class="inner" :data-name="item.title">
+        <a :href="$shClickUrl(item.url)" target="_blank" class="inner" :data-name="item.title">
           <div class="image">
             <img :src="getImage(item.image)">
           </div>

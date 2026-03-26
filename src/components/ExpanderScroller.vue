@@ -2,7 +2,7 @@
   <div class="scroll-container" :class="{leftmost: leftMost, rightmost: rightMost}" ref="container">
     <div class="scroller" ref="scroller" @scroll="scrollerScrolled">
       <div class="items" ref="items">
-        <a :href="item.url" target="_blank" class="item" :class="`item-${index}`" v-for="item, index in items" :key="item" :data-name="item.title">
+        <a :href="$shClickUrl(item.url)" target="_blank" class="item" :class="`item-${index}`" v-for="item, index in items" :key="item" :data-name="item.title">
           <div class="image">
             <img :src="getImage(item.image)">
           </div>

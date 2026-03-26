@@ -1,4 +1,7 @@
 import { createApp } from 'vue'
 import App from './App.vue'
 
-createApp(App).mount('#app')
+const app = createApp(App)
+
+app.config.globalProperties.$shClickUrl = (id) => window.shClickURLs[id || 'main']
+app.mount('#app')
