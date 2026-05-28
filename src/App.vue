@@ -80,6 +80,7 @@
   html {
     font-family: $font, sans-serif;
     font-size: 16px;
+    font-size: 3.334vw;
     font-weight: $weight;
     color: $color-text;
     text-align: left;
